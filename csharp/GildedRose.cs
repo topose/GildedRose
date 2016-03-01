@@ -65,13 +65,17 @@ namespace GildedRose
 
                 if (IsBackStagePass(item))
                 {
-                    item.Quality = item.Quality - item.Quality;
+                    VanishQuality(item);
                     return;
-
                 }
 
                 DecreaseQuality(item);
             }
+        }
+
+        private static void VanishQuality(Item item)
+        {
+            item.Quality = item.Quality - item.Quality;
         }
 
         private static void DecreaseQuality(Item item)
