@@ -78,10 +78,7 @@ namespace GildedRose
 
         private static void DecreaseQuality(Item item)
         {
-            if (item.Quality > 0)
-            {
-                item.Quality = item.Quality - 1;
-            }
+            item.Quality = Max(0, item.Quality - 1);
         }
         
         private static void VanishQuality(Item item)
