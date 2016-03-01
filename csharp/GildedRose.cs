@@ -20,14 +20,13 @@ namespace GildedRose
 
         private void UpdateQualityOfSingleItem(Item item)
         {
+            if (IsSulfuras(item)) return;
+
             if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (item.Quality > 0)
                 {
-                    if (!IsSulfuras(item))
-                    {
-                        item.Quality = item.Quality - 1;
-                    }
+                    item.Quality = item.Quality - 1;
                 }
             }
             else
@@ -57,11 +56,8 @@ namespace GildedRose
                 }
             }
 
-            if (!IsSulfuras(item))
-            {
-                item.SellIn = item.SellIn - 1;
-            }
-
+            item.SellIn = item.SellIn - 1;
+            
             if (item.SellIn < 0)
             {
                 if (item.Name != "Aged Brie")
