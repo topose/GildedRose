@@ -24,10 +24,7 @@ namespace GildedRose
 
             if (!IsAgedBrie(item) && !IsBackStagePass(item))
             {
-                if (item.Quality > 0)
-                {
-                    item.Quality = item.Quality - 1;
-                }
+                DecreaseQuality(item);
             }
             else
             {
@@ -73,10 +70,15 @@ namespace GildedRose
 
                 }
 
-                if (item.Quality > 0)
-                {
-                    item.Quality = item.Quality - 1;
-                }
+                DecreaseQuality(item);
+            }
+        }
+
+        private static void DecreaseQuality(Item item)
+        {
+            if (item.Quality > 0)
+            {
+                item.Quality = item.Quality - 1;
             }
         }
 
