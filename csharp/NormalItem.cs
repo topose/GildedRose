@@ -10,7 +10,7 @@
         {
             DecreaseQuality();
             AgeItem();
-            if (OutOfDate())
+            if (OutOfDate)
                 DecreaseQuality();
         }
     }

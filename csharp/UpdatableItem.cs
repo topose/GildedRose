@@ -35,9 +35,6 @@ namespace GildedRose
             item.SellIn--;
         }
 
-        protected bool OutOfDate()
-        {
-            return item.SellIn < 0;
-        }
+        protected bool OutOfDate => item.SellIn < 0;
     }
 }

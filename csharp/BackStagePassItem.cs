@@ -20,7 +20,7 @@ namespace GildedRose
 
             AgeItem();
 
-            if (OutOfDate())
+            if (OutOfDate)
                 VanishQuality();
         }
 
