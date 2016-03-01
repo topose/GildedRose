@@ -36,7 +36,7 @@ namespace GildedRose
 
                 IncreaseQuality(item);
 
-                if (item.SellIn < 11)
+                if (CloseToConcert(item))
                 {
                     IncreaseQuality(item);
                 }
@@ -107,8 +107,13 @@ namespace GildedRose
         {
             return item.SellIn < 0;
         }
+
+        private static bool CloseToConcert(Item item)
+        {
+            return item.SellIn < 11;
+        }
     }
-    
+
     public class Item
     {
         public string Name { get; set; }
