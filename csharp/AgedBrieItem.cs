@@ -1,6 +1,6 @@
 ﻿namespace GildedRose
 {
-    class AgedBrieItem : UpdatableItem
+    class AgedBrieItem : IUpdatableItem
     {
         public void UpdateQuality()
         {

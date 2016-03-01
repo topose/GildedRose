@@ -2,7 +2,7 @@
 
 namespace GildedRose
 {
-    interface UpdatableItem
+    interface IUpdatableItem
     {
         void UpdateQuality();
     }

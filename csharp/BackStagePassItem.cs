@@ -2,7 +2,7 @@
 
 namespace GildedRose
 {
-    class BackStagePassItem : UpdatableItem
+    class BackStagePassItem : IUpdatableItem
     {
         public void UpdateQuality()
         {
