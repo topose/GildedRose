@@ -12,41 +12,12 @@ namespace GildedRose
         
         public void UpdateQuality()
         {
-            for (var i = 0; i < Items.Count; i++)
+            var updatableItems = new UpdatableItems(Items);
+
+            foreach (var item in updatableItems)
             {
-                UpdateQuality(Items[i]);
+                item.UpdateQuality();
             }
-        }
-
-        private IUpdatableItem GetUpdatableItem(Item item)
-        {
-            if (IsSulfuras(item)) return new LegendaryItem(item);
-
-            if (IsAgedBrie(item)) return new AgedBrieItem(item);
-
-            if (IsBackStagePass(item)) return new BackStagePassItem(item);
-
-            return new NormalItem(item);
-        }
-
-        private void UpdateQuality(Item item)
-        {
-            GetUpdatableItem(item).UpdateQuality();   
-        }
-
-        private static bool IsSulfuras(Item item)
-        {
-            return item.Name == "Sulfuras, Hand of Ragnaros";
-        }
-
-        private static bool IsAgedBrie(Item item)
-        {
-            return item.Name == "Aged Brie";
-        }
-
-        private static bool IsBackStagePass(Item item)
-        {
-            return item.Name == "Backstage passes to a TAFKAL80ETC concert";
         }
     }
 
