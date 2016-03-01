@@ -4,6 +4,9 @@ namespace GildedRose
 {
     abstract class UpdatableItem : IUpdatableItem
     {
+        private const int MaxQuality = 50;
+        private const int MinQuality = 0;
+
         private Item item;
 
         protected int SellIn => item.SellIn;
@@ -17,12 +20,12 @@ namespace GildedRose
 
         protected void IncreaseQuality()
         {
-            item.Quality = Min(50, item.Quality + 1);
+            item.Quality = Min(MaxQuality, item.Quality + 1);
         }
 
         protected void DecreaseQuality()
         {
-            item.Quality = Max(0, item.Quality - 1);
+            item.Quality = Max(MinQuality, item.Quality - 1);
         }
 
         protected void VanishQuality()
