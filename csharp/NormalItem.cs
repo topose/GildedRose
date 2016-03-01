@@ -2,11 +2,8 @@
 {
     class NormalItem : UpdatableItem
     {
-        private Item item;
-
-        public NormalItem(Item item)
+        public NormalItem(Item item) : base(item)
         {
-            this.item = item;
         }
     }
 }

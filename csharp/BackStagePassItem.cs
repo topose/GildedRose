@@ -4,11 +4,8 @@ namespace GildedRose
 {
     class BackStagePassItem : UpdatableItem
     {
-        private Item item;
-
-        public BackStagePassItem(Item item)
+        public BackStagePassItem(Item item) : base(item)
         {
-            this.item = item;
         }
     }
 }

@@ -2,11 +2,8 @@
 {
     class AgedBrieItem : UpdatableItem
     {
-        private Item item;
-
-        public AgedBrieItem(Item item)
+        public AgedBrieItem(Item item) : base(item)
         {
-            this.item = item;
         }
     }
 }

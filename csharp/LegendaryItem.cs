@@ -2,11 +2,8 @@
 {
     class LegendaryItem : UpdatableItem
     {
-        private Item item;
-
-        public LegendaryItem(Item item)
+        public LegendaryItem(Item item) : base(item)
         {
-            this.item = item;
         }
     }
 }
