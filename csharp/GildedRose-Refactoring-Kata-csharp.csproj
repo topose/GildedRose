@@ -75,6 +75,7 @@
     <Compile Include="LegendaryItem.cs" />
     <Compile Include="NormalItem.cs" />
     <Compile Include="IUpdatableItem.cs" />
+    <Compile Include="UpdatableItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
