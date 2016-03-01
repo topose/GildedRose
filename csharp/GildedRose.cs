@@ -29,10 +29,7 @@ namespace GildedRose
 
             if (IsAgedBrie(item))
             {
-                if (item.Quality < 50)
-                {
-                    item.Quality = item.Quality + 1;
-                }
+                IncreaseQuality(item);
             }
 
             if (IsBackStagePass(item))
