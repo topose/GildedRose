@@ -15,16 +15,7 @@ namespace GildedRose
         
         public virtual void UpdateQuality()
         {
-            if (IsSulfuras()) throw new System.Exception("should be overriden");
-
-            if (IsAgedBrie()) throw new System.Exception("should be overriden");
-
-            if (IsBackStagePass()) throw new System.Exception("should be overriden");
-
-            DecreaseQuality();
-            AgeItem();
-            if (OutOfDate())
-                DecreaseQuality();
+            throw new System.Exception("should be overriden");
         }
 
         private bool IsSulfuras()

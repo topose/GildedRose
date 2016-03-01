@@ -8,7 +8,10 @@
 
         public override void UpdateQuality()
         {
-            base.UpdateQuality();
+            DecreaseQuality();
+            AgeItem();
+            if (OutOfDate())
+                DecreaseQuality();
         }
     }
 }
