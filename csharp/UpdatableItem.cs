@@ -2,7 +2,7 @@
 
 namespace GildedRose
 {
-    class UpdatableItem : IUpdatableItem
+    abstract class UpdatableItem : IUpdatableItem
     {
         private Item item;
 
@@ -12,11 +12,8 @@ namespace GildedRose
         {
             this.item = item;
         }
-        
-        public virtual void UpdateQuality()
-        {
-            throw new System.Exception("should be overriden");
-        }
+
+        public abstract void UpdateQuality();
 
         private bool IsSulfuras()
         {
