@@ -2,18 +2,13 @@
 
 namespace GildedRose
 {
-    class BackStagePassItem : IUpdatableItem
+    class BackStagePassItem : UpdatableItem
     {
         private Item item;
 
         public BackStagePassItem(Item item)
         {
             this.item = item;
-        }
-
-        public void UpdateQuality()
-        {
-            throw new NotImplementedException();
         }
     }
 }

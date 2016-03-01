@@ -1,17 +1,12 @@
 ﻿namespace GildedRose
 {
-    class AgedBrieItem : IUpdatableItem
+    class AgedBrieItem : UpdatableItem
     {
         private Item item;
 
         public AgedBrieItem(Item item)
         {
             this.item = item;
-        }
-
-        public void UpdateQuality()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
