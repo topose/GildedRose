@@ -34,6 +34,8 @@ namespace GildedRose
 
             if (IsBackStagePass(item)) return new BackStagePassItem(item);
 
+            if (IsConjured(item)) return new ConjuredItem(item);
+
             return new NormalItem(item);
         }
 
@@ -50,6 +52,11 @@ namespace GildedRose
         private static bool IsBackStagePass(Item item)
         {
             return item.Name == "Backstage passes to a TAFKAL80ETC concert";
+        }
+
+        private static bool IsConjured(Item item)
+        {
+            return item.Name == "Conjured";
         }
     }
 }
