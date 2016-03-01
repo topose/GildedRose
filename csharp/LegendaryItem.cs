@@ -1,6 +1,6 @@
 ﻿namespace GildedRose
 {
-    class LegendayItem : UpdatableItem
+    class LegendaryItem : UpdatableItem
     {
         public void UpdateQuality()
         {
