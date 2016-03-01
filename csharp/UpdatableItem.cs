@@ -15,21 +15,6 @@ namespace GildedRose
 
         public abstract void UpdateQuality();
 
-        private bool IsSulfuras()
-        {
-            return item.Name == "Sulfuras, Hand of Ragnaros";
-        }
-
-        private bool IsAgedBrie()
-        {
-            return item.Name == "Aged Brie";
-        }
-
-        private bool IsBackStagePass()
-        {
-            return item.Name == "Backstage passes to a TAFKAL80ETC concert";
-        }
-
         protected void IncreaseQuality()
         {
             item.Quality = Min(50, item.Quality + 1);
