@@ -67,17 +67,14 @@ namespace GildedRose
             }
         }
 
-        private static void VanishQuality(Item item)
+        private static bool IsSulfuras(Item item)
         {
-            item.Quality = item.Quality - item.Quality;
+            return item.Name == "Sulfuras, Hand of Ragnaros";
         }
 
-        private static void DecreaseQuality(Item item)
+        private static bool IsAgedBrie(Item item)
         {
-            if (item.Quality > 0)
-            {
-                item.Quality = item.Quality - 1;
-            }
+            return item.Name == "Aged Brie";
         }
 
         private static bool IsBackStagePass(Item item)
@@ -93,20 +90,27 @@ namespace GildedRose
             }
         }
 
-        private static bool IsAgedBrie(Item item)
+        private static void DecreaseQuality(Item item)
         {
-            return item.Name == "Aged Brie";
+            if (item.Quality > 0)
+            {
+                item.Quality = item.Quality - 1;
+            }
         }
+        
+        private static void VanishQuality(Item item)
+        {
+            item.Quality = item.Quality - item.Quality;
+        }
+
+        
 
         private static void AgeItem(Item item)
         {
             item.SellIn--;
         }
 
-        private static bool IsSulfuras(Item item)
-        {
-            return item.Name == "Sulfuras, Hand of Ragnaros";
-        }
+        
     }
     
     public class Item
