@@ -33,6 +33,7 @@ namespace GildedRose
 
             if (IsBackStagePass(item))
             {
+
                 IncreaseQuality(item);
 
                 if (item.SellIn < 11)
@@ -44,6 +45,13 @@ namespace GildedRose
                 {
                     IncreaseQuality(item);
                 }
+                AgeItem(item);
+
+                if (item.SellIn < 0)
+                {
+                    VanishQuality(item);
+                }
+                return;
             }
 
             if (!IsAgedBrie(item) && !IsBackStagePass(item))
