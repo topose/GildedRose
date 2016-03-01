@@ -11,7 +11,7 @@ namespace GildedRose
             this.item = item;
         }
         
-        public void UpdateQuality()
+        public virtual void UpdateQuality()
         {
             if (IsSulfuras(item)) return;
 

@@ -7,5 +7,10 @@ namespace GildedRose
         public BackStagePassItem(Item item) : base(item)
         {
         }
+
+        public override void UpdateQuality()
+        {
+            base.UpdateQuality();
+        }
     }
 }
