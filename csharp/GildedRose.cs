@@ -22,11 +22,6 @@ namespace GildedRose
         {
             if (IsSulfuras(item)) return;
 
-            if (!IsAgedBrie(item) && !IsBackStagePass(item))
-            {
-                DecreaseQuality(item);
-            }
-
             if (IsAgedBrie(item))
             {
                 IncreaseQuality(item);
@@ -34,10 +29,7 @@ namespace GildedRose
 
             if (IsBackStagePass(item))
             {
-                if (item.Quality < 50)
-                {
-                    item.Quality = item.Quality + 1;                    
-                }
+                IncreaseQuality(item);
 
                 if (item.SellIn < 11)
                 {
@@ -48,6 +40,11 @@ namespace GildedRose
                 {
                     IncreaseQuality(item);
                 }
+            }
+
+            if (!IsAgedBrie(item) && !IsBackStagePass(item))
+            {
+                DecreaseQuality(item);
             }
 
             AgeItem(item);
