@@ -69,8 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgedBrieItem.cs" />
+    <Compile Include="BackStagePassItem.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
+    <Compile Include="LegendayItem.cs" />
+    <Compile Include="NormalItem.cs" />
     <Compile Include="UpdatableItem.cs" />
   </ItemGroup>
   <ItemGroup>
