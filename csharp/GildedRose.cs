@@ -37,29 +37,23 @@ namespace GildedRose
                 IncreaseQuality(item);
 
                 if (CloseToConcert(item))
-                {
                     IncreaseQuality(item);
-                }
-
+    
                 if (EvenCloserToMethod(item))
-                {
                     IncreaseQuality(item);
-                }
+
                 AgeItem(item);
 
                 if (OutOfDate(item))
-                {
                     VanishQuality(item);
-                }
+
                 return;
             }
 
             DecreaseQuality(item);
             AgeItem(item);
             if (OutOfDate(item))
-            {
                 DecreaseQuality(item);
-            }
         }
 
         private static bool IsSulfuras(Item item)
