@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using static System.Math;
 
 namespace GildedRose
 {
@@ -33,7 +34,6 @@ namespace GildedRose
 
             if (IsBackStagePass(item))
             {
-
                 IncreaseQuality(item);
 
                 if (CloseToConcert(item))
@@ -73,10 +73,7 @@ namespace GildedRose
 
         private static void IncreaseQuality(Item item)
         {
-            if (item.Quality < 50)
-            {
-                item.Quality = item.Quality + 1;
-            }
+            item.Quality = Min(50, item.Quality + 1);
         }
 
         private static void DecreaseQuality(Item item)
