@@ -26,7 +26,7 @@ namespace GildedRose
             {
                 IncreaseQuality(item);
                 AgeItem(item);
-                if (item.SellIn < 0)
+                if (OutOfDate(item))
                     IncreaseQuality(item);
                 return;
             }
@@ -47,7 +47,7 @@ namespace GildedRose
                 }
                 AgeItem(item);
 
-                if (item.SellIn < 0)
+                if (OutOfDate(item))
                 {
                     VanishQuality(item);
                 }
@@ -56,7 +56,7 @@ namespace GildedRose
 
             DecreaseQuality(item);
             AgeItem(item);
-            if (item.SellIn < 0)
+            if (OutOfDate(item))
             {
                 DecreaseQuality(item);
             }
@@ -98,14 +98,15 @@ namespace GildedRose
             item.Quality = item.Quality - item.Quality;
         }
 
-        
-
         private static void AgeItem(Item item)
         {
             item.SellIn--;
         }
 
-        
+        private static bool OutOfDate(Item item)
+        {
+            return item.SellIn < 0;
+        }
     }
     
     public class Item
