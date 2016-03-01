@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
+    <Compile Include="UpdatableItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -19,7 +19,7 @@ namespace GildedRose
             }
         }
 
-        public void UpdateQuality(Item item)
+        private void UpdateQuality(Item item)
         {
             if (IsSulfuras(item)) return;
 
