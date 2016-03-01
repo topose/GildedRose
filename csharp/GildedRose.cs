@@ -60,26 +60,25 @@ namespace GildedRose
 
             if (item.SellIn < 0)
             {
-                if (!IsAgedBrie(item))
+                if (IsAgedBrie(item))
                 {
-                    if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                    IncreaseQuality(item);
+                    return;
+                }
+
+                if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                {
+                    if (item.Quality > 0)
                     {
-                        if (item.Quality > 0)
+                        if (item.Name != "Sulfuras, Hand of Ragnaros")
                         {
-                            if (item.Name != "Sulfuras, Hand of Ragnaros")
-                            {
-                                item.Quality = item.Quality - 1;
-                            }
+                            item.Quality = item.Quality - 1;
                         }
-                    }
-                    else
-                    {
-                        item.Quality = item.Quality - item.Quality;
                     }
                 }
                 else
                 {
-                    IncreaseQuality(item);
+                    item.Quality = item.Quality - item.Quality;
                 }
             }
         }
