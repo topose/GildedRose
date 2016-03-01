@@ -41,7 +41,7 @@ namespace GildedRose
                     IncreaseQuality(item);
                 }
 
-                if (item.SellIn < 6)
+                if (EvenCloserToMethod(item))
                 {
                     IncreaseQuality(item);
                 }
@@ -111,6 +111,11 @@ namespace GildedRose
         private static bool CloseToConcert(Item item)
         {
             return item.SellIn < 11;
+        }
+
+        private static bool EvenCloserToMethod(Item item)
+        {
+            return item.SellIn < 6;
         }
     }
 
