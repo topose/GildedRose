@@ -1,4 +1,6 @@
-﻿namespace GildedRose
+﻿using System;
+
+namespace GildedRose
 {
     interface UpdatableItem
     {
