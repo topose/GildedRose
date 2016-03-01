@@ -28,7 +28,7 @@ namespace GildedRose
 
         private IUpdatableItem CreateUpdatableItem(Item item)
         {
-            if (IsSulfuras(item)) return new LegendaryItem(item);
+            if (IsLegendaryItem(item)) return new LegendaryItem(item);
 
             if (IsAgedBrie(item)) return new AgedBrieItem(item);
 
@@ -37,7 +37,7 @@ namespace GildedRose
             return new NormalItem(item);
         }
 
-        private static bool IsSulfuras(Item item)
+        private static bool IsLegendaryItem(Item item)
         {
             return item.Name == "Sulfuras, Hand of Ragnaros";
         }
