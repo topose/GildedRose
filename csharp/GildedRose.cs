@@ -56,8 +56,8 @@ namespace GildedRose
                 }
             }
 
-            item.SellIn = item.SellIn - 1;
-            
+            AgeItem(item);
+
             if (item.SellIn < 0)
             {
                 if (item.Name != "Aged Brie")
@@ -85,6 +85,11 @@ namespace GildedRose
                     }
                 }
             }
+        }
+
+        private static void AgeItem(Item item)
+        {
+            item.SellIn = item.SellIn - 1;
         }
 
         private static bool IsSulfuras(Item item)
