@@ -13,87 +13,87 @@ namespace GildedRose
         
         public virtual void UpdateQuality()
         {
-            if (IsSulfuras(item)) throw new System.Exception("should be overriden");
+            if (IsSulfuras()) throw new System.Exception("should be overriden");
 
-            if (IsAgedBrie(item))
+            if (IsAgedBrie())
             {
-                IncreaseQuality(item);
-                AgeItem(item);
-                if (OutOfDate(item))
-                    IncreaseQuality(item);
+                IncreaseQuality();
+                AgeItem();
+                if (OutOfDate())
+                    IncreaseQuality();
                 return;
             }
 
-            if (IsBackStagePass(item))
+            if (IsBackStagePass())
             {
-                IncreaseQuality(item);
+                IncreaseQuality();
 
-                if (CloseToConcert(item))
-                    IncreaseQuality(item);
+                if (CloseToConcert())
+                    IncreaseQuality();
 
-                if (EvenCloserToMethod(item))
-                    IncreaseQuality(item);
+                if (EvenCloserToMethod())
+                    IncreaseQuality();
 
-                AgeItem(item);
+                AgeItem();
 
-                if (OutOfDate(item))
-                    VanishQuality(item);
+                if (OutOfDate())
+                    VanishQuality();
 
                 return;
             }
 
-            DecreaseQuality(item);
-            AgeItem(item);
-            if (OutOfDate(item))
-                DecreaseQuality(item);
+            DecreaseQuality();
+            AgeItem();
+            if (OutOfDate())
+                DecreaseQuality();
         }
 
-        private static bool IsSulfuras(Item item)
+        private bool IsSulfuras()
         {
             return item.Name == "Sulfuras, Hand of Ragnaros";
         }
 
-        private static bool IsAgedBrie(Item item)
+        private bool IsAgedBrie()
         {
             return item.Name == "Aged Brie";
         }
 
-        private static bool IsBackStagePass(Item item)
+        private bool IsBackStagePass()
         {
             return item.Name == "Backstage passes to a TAFKAL80ETC concert";
         }
 
-        protected static void IncreaseQuality(Item item)
+        protected void IncreaseQuality()
         {
             item.Quality = Min(50, item.Quality + 1);
         }
 
-        protected static void DecreaseQuality(Item item)
+        protected void DecreaseQuality()
         {
             item.Quality = Max(0, item.Quality - 1);
         }
 
-        protected static void VanishQuality(Item item)
+        protected void VanishQuality()
         {
             item.Quality = 0;
         }
 
-        protected static void AgeItem(Item item)
+        protected void AgeItem()
         {
             item.SellIn--;
         }
 
-        protected static bool OutOfDate(Item item)
+        protected bool OutOfDate()
         {
             return item.SellIn < 0;
         }
 
-        protected static bool CloseToConcert(Item item)
+        protected bool CloseToConcert()
         {
             return item.SellIn < 11;
         }
 
-        protected static bool EvenCloserToMethod(Item item)
+        protected bool EvenCloserToMethod()
         {
             return item.SellIn < 6;
         }
