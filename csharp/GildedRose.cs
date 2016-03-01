@@ -66,16 +66,16 @@ namespace GildedRose
                     return;
                 }
 
-                if (!IsBackStagePass(item))
-                {
-                    if (item.Quality > 0)
-                    {
-                        item.Quality = item.Quality - 1;
-                    }
-                }
-                else
+                if (IsBackStagePass(item))
                 {
                     item.Quality = item.Quality - item.Quality;
+                    return;
+
+                }
+
+                if (item.Quality > 0)
+                {
+                    item.Quality = item.Quality - 1;
                 }
             }
         }
