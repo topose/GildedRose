@@ -11,6 +11,11 @@
             DecreaseQuality();
             DecreaseQuality();
             AgeItem();
+            if (OutOfDate)
+            {
+                DecreaseQuality();
+                DecreaseQuality();
+            }
         }
     }
 }

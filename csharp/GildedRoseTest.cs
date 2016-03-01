@@ -150,6 +150,17 @@ namespace GildedRose
             AssertItemsQuality(1, regularItem);
         }
 
+        [Fact]
+        public void ConjuredItemsQualityDecreasesByFourAfterSellDate()
+        {
+            Item regularItem = new Item { Name = "Conjured", SellIn = 10, Quality = 41 };
+            gildedRose = AGildedRoseWithItems(regularItem);
+
+            AfterDays(15);
+
+            AssertItemsQuality(1, regularItem);
+        }
+
         private GildedRose gildedRose;
 
         private void AfterDays(int numberOfDays)
