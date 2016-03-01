@@ -19,6 +19,17 @@ namespace GildedRose
             }
         }
 
+        private IUpdatableItem GetUpdatableItem(Item item)
+        {
+            if (IsSulfuras(item)) return new LegendaryItem(item);
+
+            if (IsAgedBrie(item)) return new AgedBrieItem(item);
+
+            if (IsBackStagePass(item)) return new BackStagePassItem(item);
+
+            return new NormalItem(item);
+        }
+
         private void UpdateQuality(Item item)
         {
             if (IsSulfuras(item)) return;
