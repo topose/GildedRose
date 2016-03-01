@@ -13,7 +13,7 @@ namespace GildedRose
         
         public virtual void UpdateQuality()
         {
-            if (IsSulfuras(item)) return;
+            if (IsSulfuras(item)) throw new System.Exception("should be overriden");
 
             if (IsAgedBrie(item))
             {

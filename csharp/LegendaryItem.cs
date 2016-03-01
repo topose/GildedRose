@@ -8,7 +8,7 @@
 
         public override void UpdateQuality()
         {
-            base.UpdateQuality();
+            // legendary items never change its quality or sellin.            
         }
     }
 }
