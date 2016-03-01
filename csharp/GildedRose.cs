@@ -22,7 +22,7 @@ namespace GildedRose
         {
             if (IsSulfuras(item)) return;
 
-            if (!IsAgedBrie(item) && item.Name != "Backstage passes to a TAFKAL80ETC concert")
+            if (!IsAgedBrie(item) && !IsBackStagePass(item))
             {
                 if (item.Quality > 0)
                 {
@@ -35,7 +35,7 @@ namespace GildedRose
                 {
                     item.Quality = item.Quality + 1;
 
-                    if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                    if (IsBackStagePass(item))
                     {
                         if (item.SellIn < 11)
                         {
@@ -66,7 +66,7 @@ namespace GildedRose
                     return;
                 }
 
-                if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
+                if (!IsBackStagePass(item))
                 {
                     if (item.Quality > 0)
                     {
@@ -81,6 +81,11 @@ namespace GildedRose
                     item.Quality = item.Quality - item.Quality;
                 }
             }
+        }
+
+        private static bool IsBackStagePass(Item item)
+        {
+            return item.Name == "Backstage passes to a TAFKAL80ETC concert";
         }
 
         private static void IncreaseQuality(Item item)
