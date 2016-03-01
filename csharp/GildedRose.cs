@@ -24,7 +24,7 @@ namespace GildedRose
             {
                 if (item.Quality > 0)
                 {
-                    if (item.Name != "Sulfuras, Hand of Ragnaros")
+                    if (!IsSulfuras(item))
                     {
                         item.Quality = item.Quality - 1;
                     }
@@ -57,7 +57,7 @@ namespace GildedRose
                 }
             }
 
-            if (item.Name != "Sulfuras, Hand of Ragnaros")
+            if (!IsSulfuras(item))
             {
                 item.SellIn = item.SellIn - 1;
             }
@@ -89,6 +89,11 @@ namespace GildedRose
                     }
                 }
             }
+        }
+
+        private static bool IsSulfuras(Item item)
+        {
+            return item.Name == "Sulfuras, Hand of Ragnaros";
         }
     }
     
