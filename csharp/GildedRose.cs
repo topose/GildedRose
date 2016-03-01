@@ -83,7 +83,7 @@ namespace GildedRose
         
         private static void VanishQuality(Item item)
         {
-            item.Quality = item.Quality - item.Quality;
+            item.Quality = 0;
         }
 
         private static void AgeItem(Item item)
