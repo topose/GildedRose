@@ -15,11 +15,11 @@ namespace GildedRose
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                UpdateQualityOfSingleItem(Items[i]);
+                UpdateQuality(Items[i]);
             }
         }
 
-        private void UpdateQualityOfSingleItem(Item item)
+        private void UpdateQuality(Item item)
         {
             if (IsSulfuras(item)) return;
 
