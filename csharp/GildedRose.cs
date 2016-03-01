@@ -22,7 +22,7 @@ namespace GildedRose
         {
             if (IsSulfuras(item)) return;
 
-            if (item.Name != "Aged Brie" && item.Name != "Backstage passes to a TAFKAL80ETC concert")
+            if (!IsAgedBrie(item) && item.Name != "Backstage passes to a TAFKAL80ETC concert")
             {
                 if (item.Quality > 0)
                 {
@@ -60,7 +60,7 @@ namespace GildedRose
 
             if (item.SellIn < 0)
             {
-                if (item.Name != "Aged Brie")
+                if (!IsAgedBrie(item))
                 {
                     if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
                     {
@@ -85,6 +85,11 @@ namespace GildedRose
                     }
                 }
             }
+        }
+
+        private static bool IsAgedBrie(Item item)
+        {
+            return item.Name == "Aged Brie";
         }
 
         private static void AgeItem(Item item)
