@@ -27,7 +27,28 @@ namespace GildedRose
                 DecreaseQuality(item);
             }
 
-            if (IsAgedBrie(item) || IsBackStagePass(item))
+            if (IsAgedBrie(item))
+            {
+                if (item.Quality < 50)
+                {
+                    item.Quality = item.Quality + 1;
+
+                    if (IsBackStagePass(item))
+                    {
+                        if (item.SellIn < 11)
+                        {
+                            IncreaseQuality(item);
+                        }
+
+                        if (item.SellIn < 6)
+                        {
+                            IncreaseQuality(item);
+                        }
+                    }
+                }
+            }
+
+            if (IsBackStagePass(item))
             {
                 if (item.Quality < 50)
                 {
