@@ -37,7 +37,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>GildedRose_Refactoring_Kata_csharp</RootNamespace>
+    <RootNamespace>GildedRose</RootNamespace>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
