@@ -15,14 +15,7 @@ namespace GildedRose
         {
             if (IsSulfuras()) throw new System.Exception("should be overriden");
 
-            if (IsAgedBrie())
-            {
-                IncreaseQuality();
-                AgeItem();
-                if (OutOfDate())
-                    IncreaseQuality();
-                return;
-            }
+            if (IsAgedBrie()) throw new System.Exception("should be overriden");
 
             if (IsBackStagePass())
             {
