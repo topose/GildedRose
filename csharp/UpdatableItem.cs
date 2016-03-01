@@ -17,23 +17,7 @@ namespace GildedRose
 
             if (IsAgedBrie()) throw new System.Exception("should be overriden");
 
-            if (IsBackStagePass())
-            {
-                IncreaseQuality();
-
-                if (CloseToConcert())
-                    IncreaseQuality();
-
-                if (EvenCloserToMethod())
-                    IncreaseQuality();
-
-                AgeItem();
-
-                if (OutOfDate())
-                    VanishQuality();
-
-                return;
-            }
+            if (IsBackStagePass()) throw new System.Exception("should be overriden");
 
             DecreaseQuality();
             AgeItem();

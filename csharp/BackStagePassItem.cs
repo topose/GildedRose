@@ -10,7 +10,18 @@ namespace GildedRose
 
         public override void UpdateQuality()
         {
-            base.UpdateQuality();
+            IncreaseQuality();
+
+            if (CloseToConcert())
+                IncreaseQuality();
+
+            if (EvenCloserToMethod())
+                IncreaseQuality();
+
+            AgeItem();
+
+            if (OutOfDate())
+                VanishQuality();
         }
     }
 }
