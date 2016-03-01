@@ -17,7 +17,7 @@ namespace GildedRose
         {
             foreach (var item in items)
             {
-                yield return GetUpdatableItem(item);
+                yield return CreateUpdatableItem(item);
             }
         }
 
@@ -26,7 +26,7 @@ namespace GildedRose
             return this.GetEnumerator();
         }
 
-        private IUpdatableItem GetUpdatableItem(Item item)
+        private IUpdatableItem CreateUpdatableItem(Item item)
         {
             if (IsSulfuras(item)) return new LegendaryItem(item);
 
