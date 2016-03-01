@@ -23,5 +23,15 @@ namespace GildedRose
             if (OutOfDate())
                 VanishQuality();
         }
+
+        protected bool CloseToConcert()
+        {
+            return base.SellIn < 11;
+        }
+
+        protected bool EvenCloserToMethod()
+        {
+            return base.SellIn < 6;
+        }
     }
 }

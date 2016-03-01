@@ -6,6 +6,8 @@ namespace GildedRose
     {
         private Item item;
 
+        protected int SellIn => item.SellIn;
+
         protected UpdatableItem(Item item)
         {
             this.item = item;
@@ -63,16 +65,6 @@ namespace GildedRose
         protected bool OutOfDate()
         {
             return item.SellIn < 0;
-        }
-
-        protected bool CloseToConcert()
-        {
-            return item.SellIn < 11;
-        }
-
-        protected bool EvenCloserToMethod()
-        {
-            return item.SellIn < 6;
         }
     }
 }
