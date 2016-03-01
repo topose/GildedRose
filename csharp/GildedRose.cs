@@ -89,7 +89,7 @@ namespace GildedRose
 
         private static void AgeItem(Item item)
         {
-            item.SellIn = item.SellIn - 1;
+            item.SellIn--;
         }
 
         private static bool IsSulfuras(Item item)
