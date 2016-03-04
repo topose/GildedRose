@@ -77,6 +77,7 @@
     <Compile Include="NormalItem.cs" />
     <Compile Include="IUpdatableItem.cs" />
     <Compile Include="UpdatableItem.cs" />
+    <Compile Include="UpdatableItemFactory.cs" />
     <Compile Include="UpdatableItems.cs" />
   </ItemGroup>
   <ItemGroup>
