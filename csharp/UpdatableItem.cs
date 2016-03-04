@@ -18,25 +18,13 @@ namespace GildedRose
 
         public abstract void UpdateQuality();
 
-        protected void IncreaseQuality()
-        {
-            item.Quality = Min(MaxQuality, item.Quality + 1);
-        }
+        protected void IncreaseQuality() => item.Quality = Min(MaxQuality, item.Quality + 1);
+        
+        protected void DecreaseQuality() => item.Quality = Max(MinQuality, item.Quality - 1);
 
-        protected void DecreaseQuality()
-        {
-            item.Quality = Max(MinQuality, item.Quality - 1);
-        }
+        protected void VanishQuality() => item.Quality = 0;
 
-        protected void VanishQuality()
-        {
-            item.Quality = 0;
-        }
-
-        protected void AgeItem()
-        {
-            item.SellIn--;
-        }
+        protected void AgeItem() => item.SellIn--;
 
         protected bool OutOfDate => item.SellIn < 0;
     }
