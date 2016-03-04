@@ -21,10 +21,7 @@ namespace GildedRose
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
         private IUpdatableItem CreateUpdatableItem(Item item)
         {
@@ -39,24 +36,12 @@ namespace GildedRose
             return new NormalItem(item);
         }
 
-        private static bool IsLegendaryItem(Item item)
-        {
-            return item.Name == "Sulfuras, Hand of Ragnaros";
-        }
+        private static bool IsLegendaryItem(Item item) => item.Name == "Sulfuras, Hand of Ragnaros";
 
-        private static bool IsAgedBrie(Item item)
-        {
-            return item.Name == "Aged Brie";
-        }
+        private static bool IsAgedBrie(Item item) => item.Name == "Aged Brie";
 
-        private static bool IsBackStagePass(Item item)
-        {
-            return item.Name == "Backstage passes to a TAFKAL80ETC concert";
-        }
+        private static bool IsBackStagePass(Item item) => item.Name == "Backstage passes to a TAFKAL80ETC concert";
 
-        private static bool IsConjured(Item item)
-        {
-            return item.Name == "Conjured";
-        }
+        private static bool IsConjured(Item item) => item.Name == "Conjured";
     }
 }

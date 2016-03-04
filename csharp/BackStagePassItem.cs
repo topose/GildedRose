@@ -24,14 +24,8 @@ namespace GildedRose
                 VanishQuality();
         }
 
-        protected bool CloseToConcert()
-        {
-            return base.SellIn < 11;
-        }
+        protected bool CloseToConcert() => base.SellIn < 11;
 
-        protected bool EvenCloserToMethod()
-        {
-            return base.SellIn < 6;
-        }
+        protected bool EvenCloserToMethod() => base.SellIn < 6;
     }
 }
